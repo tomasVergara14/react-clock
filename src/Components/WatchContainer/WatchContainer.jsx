@@ -1,6 +1,7 @@
 import React from 'react'
 
 import HourContainer from '../HourContainer/HourContainer';
+import Chonometer from '../Chonometer/Chonometer';
 
 import { Switch } from '@material-ui/core';
 
@@ -29,7 +30,7 @@ const WatchContainer = () => {
                 </div>
             :
                 <div className="watchContainer">
-                    <p>No</p>
+                    <Chonometer/>
                 </div>}
             
         </div>

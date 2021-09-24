@@ -2,11 +2,9 @@ import React, { useState, useEffect} from 'react'
 
 import './Minutes.css'
 
-
 const Minutes = () => {
 
     const [minute, setMinute]= useState()
-
 
     function setDate(){
         const nowMinutes = new Date()
@@ -14,12 +12,9 @@ const Minutes = () => {
         setMinute(minutes)
         return minute
     }
-
-    console.log(minute)
     
     setInterval(setDate, 1000)
 
-    
     useEffect(()=>{
         return () => {
             setMinute({}); // bug de un componente unmounted, asi se soluciona
