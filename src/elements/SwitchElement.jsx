@@ -8,6 +8,7 @@ const  ControlledSwitches = ()=> {
     setChecked(event.target.checked);
   };
 
+  console.log(checked)
   return (
     <Switch
       checked={checked}
