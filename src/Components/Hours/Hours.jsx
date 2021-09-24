@@ -1,13 +1,15 @@
 import React from 'react'
 
+import './Hours.css'
+
 const nowHour = new Date()
 const hours = nowHour.getHours() 
 
 const Hours = () => {
 
     return (
-        <div>
-            {hours}
+        <div className="Hours">
+            <p>{hours}</p> 
         </div>
     )
 }

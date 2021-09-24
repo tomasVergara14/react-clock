@@ -1,20 +1,23 @@
 import React from 'react'
 
+import './Minutes.css'
+
 const nowMinutes = new Date()
 const minutes = nowMinutes.getMinutes()
-console.log(minutes) 
 
 const Minutes = () => {
 
     if(minutes < 10){
         return(
-            <div>0{minutes}  </div>
+            <div className="Minutes">
+                <p>0{minutes}</p>   
+            </div>
         )
     }
 
     return (
-        <div>
-            {minutes}
+        <div className="Minutes">
+           <p>{minutes}</p> 
         </div>
     )
 }
