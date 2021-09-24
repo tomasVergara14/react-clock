@@ -9,7 +9,7 @@ const HourContainer = () => {
     return (
         <div className="HourContainer">
             <Hours/>
-            <p>:</p>
+            <p className="split">:</p>
             <Minutes/>
         </div>
     )

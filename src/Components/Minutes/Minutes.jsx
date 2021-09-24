@@ -1,23 +1,35 @@
-import React from 'react'
+import React, { useState} from 'react'
 
 import './Minutes.css'
 
-const nowMinutes = new Date()
-const minutes = nowMinutes.getMinutes()
 
 const Minutes = () => {
 
-    if(minutes < 10){
+    const [minute, setMinute]= useState()
+
+    function setDate(){
+        const nowMinutes = new Date()
+        const minutes = nowMinutes.getMinutes()
+        setMinute(minutes)
+        return minute
+    }
+
+    console.log(minute)
+    
+    setInterval(setDate, 1000)
+
+
+    if(minute < 10){
         return(
             <div className="Minutes">
-                <p>0{minutes}</p>   
+                <p>0{minute}</p>   
             </div>
         )
     }
 
     return (
         <div className="Minutes">
-           <p>{minutes}</p> 
+           <p>{minute}</p> 
         </div>
     )
 }
