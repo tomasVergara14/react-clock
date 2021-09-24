@@ -1,16 +1,18 @@
-.containerHour{
+.container{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.HourContainer{
+.watchContainer{
     width: 80%;
     height: 10em;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    background-color: black;
+    border: 2px solid gray;
 }
 .split{
     font-size: 3em;

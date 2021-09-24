@@ -1,12 +1,12 @@
 import './App.css';
 
-import HourContainer from './Components/HourContainer/HourContainer';
+import WatchContainer from './Components/WatchContainer/WatchContainer';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <HourContainer/>
+      <WatchContainer/>
       </header>
     </div>
   );
