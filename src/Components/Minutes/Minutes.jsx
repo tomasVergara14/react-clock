@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 
 import './Minutes.css'
 
@@ -6,6 +6,7 @@ import './Minutes.css'
 const Minutes = () => {
 
     const [minute, setMinute]= useState()
+
 
     function setDate(){
         const nowMinutes = new Date()
@@ -18,6 +19,12 @@ const Minutes = () => {
     
     setInterval(setDate, 1000)
 
+    
+    useEffect(()=>{
+        return () => {
+            setMinute({}); // bug de un componente unmounted, asi se soluciona
+        };
+    }, []);
 
     if(minute < 10){
         return(

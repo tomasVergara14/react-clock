@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 
 import './Hours.css'
 
@@ -14,8 +14,15 @@ const Hours = () => {
         setHour(hours)
         return hour
     }
-    
+
     setInterval(setDate, 1000)
+
+    
+    useEffect(()=>{
+        return () => {
+            setHour({}); // This worked for me
+        };
+    }, []);
 
     if(hour < 10){
         return(
