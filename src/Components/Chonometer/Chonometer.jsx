@@ -8,6 +8,9 @@ function Chonometer(){
     const [time, setTime] = useState({ms:0, s:0, m:0, h:0})
     // lo guardamos para despues poder frenarlo
     const [interv, setInterv]= useState()
+    // alternamos entre que botones se van a ver
+    // sin empezar 0, empezado 1, parado 2
+    const [status, setStatus] = useState(0)
 
     console.log(time)
 
@@ -35,10 +38,17 @@ function Chonometer(){
 
     const start = ()=>{
         run();
+        setStatus(1)
         setInterv(setInterval(run,10)) 
+    }
+    const reset = ()=>{        
+        clearInterval(interv)
+        setTime({ms:0, s:0, m:0, h:0})
+        setStatus(0)
     }
     const stop = ()=>{
         clearInterval(interv)
+        setStatus(2)
     }
 
     return (
@@ -49,8 +59,19 @@ function Chonometer(){
                 <p>{(time.s >10)? time.s : "0"+ time.s }:</p>
                 <p>{(time.ms >10)? time.ms : "0"+ time.ms } </p>
             </div>
-            <button onClick={start} >Start</button>
-            <button onClick={stop} >Stop</button>
+            {status ===0?
+                <button onClick={start} >Start</button>
+                :
+                <div>
+                    <button onClick={start} >resume</button>
+                    <button onClick={reset}>reset</button>
+                    <button onClick={stop} >Stop</button> 
+                </div>
+                
+            }
+                        
+                        
+            
         </div>
     )
 }
