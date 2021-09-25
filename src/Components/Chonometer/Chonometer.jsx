@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 import './Chronometer.css'
 
@@ -63,9 +63,9 @@ function Chonometer(){
                 <button onClick={start} >Start</button>
                 :
                 <div>
-                    <button onClick={start} >resume</button>
+                    {status ===2?<button onClick={start} >resume</button>:<button onClick={stop} >Stop</button> }
+                    
                     <button onClick={reset}>reset</button>
-                    <button onClick={stop} >Stop</button> 
                 </div>
                 
             }
