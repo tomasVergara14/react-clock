@@ -14,13 +14,12 @@ function Chonometer(){
     // sin empezar 0, empezado 1, parado 2
     const [status, setStatus] = useState(0)
 
-    console.log(time)
-
     var updateMs = time.ms
     var updateS = time.s
     var updateM = time.m
     var updateH = time.h
 
+    //aumentamos en 1 cada vez que los milisegundos llegan a 100
     const run=()=>{
         if(updateM === 60){
             updateH++;
