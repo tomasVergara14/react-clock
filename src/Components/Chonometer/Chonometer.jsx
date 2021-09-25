@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+import { Button } from '@material-ui/core'
+
 import './Chronometer.css'
 
 function Chonometer(){
@@ -52,20 +54,20 @@ function Chonometer(){
     }
 
     return (
-        <div>
+        <div className="chronometerContainer">
             <div className="chronometer">
-                <p>{(time.h >10)? time.h : "0"+ time.h }:</p>
-                <p>{(time.m >10)? time.m : "0"+ time.m }:</p>
-                <p>{(time.s >10)? time.s : "0"+ time.s }:</p>
-                <p>{(time.ms >10)? time.ms : "0"+ time.ms } </p>
+                <p>{(time.h >=10)? time.h : "0"+ time.h }:</p>
+                <p>{(time.m >=10)? time.m : "0"+ time.m }:</p>
+                <p>{(time.s >=10)? time.s : "0"+ time.s }</p>
             </div>
+            {/* consultamos el estado del contador */}
             {status ===0?
-                <button onClick={start} >Start</button>
+                <Button variant="contained"  color="secondary" size="large" onClick={start} >Start</Button>
                 :
-                <div>
-                    {status ===2?<button onClick={start} >resume</button>:<button onClick={stop} >Stop</button> }
-                    
-                    <button onClick={reset}>reset</button>
+                <div className="buttonsContainer">
+                    {/* alternamos los botones entre parar y continuar */}
+                    {status ===2?<Button variant="contained" color="secondary" onClick={start} >resume</Button>:<Button variant="contained" color="secondary" size="large" onClick={stop} >Stop</Button> }                    
+                    <Button variant="contained" color="secondary" onClick={reset}>reset</Button>
                 </div>
                 
             }

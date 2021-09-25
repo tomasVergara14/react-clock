@@ -1,3 +1,18 @@
+.chronometerContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .chronometer{
     display: flex;
+}
+.chronometer p{
+    font-size: 2em;
+}
+.buttonsContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
